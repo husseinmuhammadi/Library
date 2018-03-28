@@ -6,14 +6,13 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 <h:head>
-    <title>
-        JSF
-    </title>
+    JSF Header
 </h:head>
 <h:body>
-    Hello JSF
+    <h3>JSF Body</h3>
+    <h:form>
+        <h:inputText value="#{helloBean.userName}"></h:inputText>
+        <h:commandButton value="Welcome!!!" action="welcome"></h:commandButton>
+    </h:form>
 </h:body>
-<!--<f:view>-->
-    <!--<h:outputLabel value="Hello, world"/>-->
-<!--</f:view>-->
 </html>
