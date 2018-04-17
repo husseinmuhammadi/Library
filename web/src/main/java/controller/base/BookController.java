@@ -1,12 +1,9 @@
 package controller.base;
 
-import controller.JPAProvider;
 import to.Book;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
-import javax.persistence.EntityManager;
-import javax.persistence.EntityTransaction;
 import java.io.Serializable;
 
 @ManagedBean
@@ -14,7 +11,7 @@ import java.io.Serializable;
 public class BookController implements Serializable {
     private Book book;
 
-    public BookController(){
+    public BookController() {
         book = new Book();
     }
 

@@ -1,22 +1,19 @@
 package to;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "BOOK1")
 public class Book {
-    String name;
-    String desc;
+    @Id
+    private Long id;
 
-    public String getName() {
-        return name;
-    }
+    @Column
+    private String title;
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDesc() {
-        return desc;
-    }
-
-    public void setDesc(String desc) {
-        this.desc = desc;
-    }
+    @Column
+    private String description;
 }
