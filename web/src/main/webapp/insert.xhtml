@@ -11,8 +11,9 @@
 <h:body>
     <h:form>
         <div>
-            <h:inputText value="#{bookController.book.name}" label="Book Name"/>
-            <h:inputText value="#{bookController.book.desc}" label="Book Desc"/>
+            <h:inputText value="#{bookController.book.id}" label="Book Name"/>
+            <h:inputText value="#{bookController.book.title}" label="Book Name"/>
+            <h:inputText value="#{bookController.book.description}" label="Book Desc"/>
             <h:commandButton action="#{bookController.insertBook}" value="Insert"/>
         </div>
     </h:form>

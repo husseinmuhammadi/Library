@@ -1,14 +1,20 @@
 package controller.base;
 
+import dao.BookDao;
 import to.Book;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
+import javax.ejb.EJB;
+import javax.faces.view.ViewScoped;
+import javax.inject.Named;
 import java.io.Serializable;
 
-@ManagedBean
+@Named
 @ViewScoped
 public class BookController implements Serializable {
+
+    @EJB
+    private BookDao dao;
+
     private Book book;
 
     public BookController() {
@@ -24,12 +30,8 @@ public class BookController implements Serializable {
     }
 
     public String insertBook() {
-//        EntityManager entityManager = JPAProvider.getEntityManagerFactory().createEntityManager();
-//        EntityTransaction entityTransaction = entityManager.getTransaction();
-//        entityTransaction.begin();
-//        entityManager.persist(book);
-//        entityTransaction.commit();
-//        entityManager.close();
-        return "insertResponse";
+        dao.save(book);
+        // return "insertResponse";
+        return null;
     }
 }
