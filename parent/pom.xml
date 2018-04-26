@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.npci.isc</groupId>
-    <artifactId>switch-parent</artifactId>
+    <groupId>com.npci.lms</groupId>
+    <artifactId>library-parent</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <packaging>pom</packaging>
@@ -24,28 +24,28 @@
     <url>http://maven.apache.org</url>
 
     <properties>
-        <web.artifactId>switch-web</web.artifactId>
+        <web.artifactId>library-web</web.artifactId>
         <web.version>1.0.0-SNAPSHOT</web.version>
-        <web.archive.name>web</web.archive.name>
-        <web.contextroot>/switch-simulator</web.contextroot>
+        <web.archive.name>library-web</web.archive.name>
+        <web.contextroot>/library</web.contextroot>
 
-        <api.artifactId>switch-api</api.artifactId>
+        <api.artifactId>library-api</api.artifactId>
         <api.version>1.0.0-SNAPSHOT</api.version>
-        <api.archive.name>api</api.archive.name>
+        <api.archive.name>library-api</api.archive.name>
 
-        <service.artifactId>switch-service</service.artifactId>
+        <service.artifactId>library-service</service.artifactId>
         <service.version>1.0.0-SNAPSHOT</service.version>
-        <service.archive.name>service</service.archive.name>
+        <service.archive.name>library-service</service.archive.name>
 
-        <model.artifactId>switch-model</model.artifactId>
+        <model.artifactId>library-model</model.artifactId>
         <model.version>1.0.0-SNAPSHOT</model.version>
-        <model.archive.name>model</model.archive.name>
+        <model.archive.name>library-model</model.archive.name>
 
-        <ear.artifactId>switch-ear</ear.artifactId>
+        <ear.artifactId>library-ear</ear.artifactId>
         <ear.version>1.0.0-SNAPSHOT</ear.version>
-        <ear.archive.name>switch-simulator</ear.archive.name>
+        <ear.archive.name>library</ear.archive.name>
 
-        <utility.groupId>com.npci.isc</utility.groupId>
+        <utility.groupId>com.npci.lms</utility.groupId>
         <utility.artifactId>utility</utility.artifactId>
         <utility.version>1.0.0-SNAPSHOT</utility.version>
     </properties>
@@ -83,24 +83,6 @@
             <version>3.7</version>
             <scope>provided</scope>
         </dependency>
-
-        <!--
-        <dependency>
-            <groupId>ir.middle-east-bank.switch</groupId>
-            <artifactId>switch-logger</artifactId>
-            <version>1.0.2</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.slf4j</groupId>
-                    <artifactId>slf4j-api</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>ch.qos.logback</groupId>
-                    <artifactId>logback-classic</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        -->
     </dependencies>
 
     <build>

@@ -5,8 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>com.npci.isc</groupId>
-        <artifactId>switch-parent</artifactId>
+        <groupId>com.npci.lms</groupId>
+        <artifactId>library-parent</artifactId>
         <version>1.0-SNAPSHOT</version>
         <relativePath>../parent/</relativePath>
     </parent>
