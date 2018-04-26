@@ -30,7 +30,7 @@
 
     <servlet>
         <servlet-name>Mux Invoke</servlet-name>
-        <servlet-class>com.npci.financial.isc.servlet.MuxInvoke</servlet-class>
+        <servlet-class>com.npci.lms.library.servlet.MuxInvoke</servlet-class>
     </servlet>
 
     <servlet-mapping>

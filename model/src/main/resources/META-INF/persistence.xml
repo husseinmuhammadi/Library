@@ -8,7 +8,7 @@
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
         <jta-data-source>java:/jdbc/Library</jta-data-source>
-        <class>com.npci.isc.model.to.Book</class>
+        <class>com.npci.lms.library.model.to.Book</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
         <shared-cache-mode>NONE</shared-cache-mode>
         <properties>
@@ -17,7 +17,7 @@
             <property name="javax.persistence.sql-load-script-source" value="META-INF/insert.sql"/>
 
             <!--<property name="hibernate.dialect" value="org.hibernate.dialect.Oracle10gDialect"/>-->
-            <property name="hibernate.dialect" value="com.npci.isc.model.persistence.dialect.hibernate.OracleDialect"/>
+            <property name="hibernate.dialect" value="com.npci.lms.library.model.persistence.dialect.hibernate.OracleDialect"/>
             <property name="hibernate.show_sql" value="true"/>
             <property name="hibernate.format_sql" value="true"/>
 

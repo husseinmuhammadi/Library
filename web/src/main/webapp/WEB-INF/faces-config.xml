@@ -6,16 +6,16 @@
     
     <application>
         <resource-bundle>
-            <base-name>com.npci.isc.web.i18n.label.messages</base-name>
+            <base-name>com.npci.lms.library.web.i18n.label.messages</base-name>
             <var>lbl</var>
         </resource-bundle>
 
         <resource-bundle>
-            <base-name>com.npci.isc.web.i18n.message.messages</base-name>
+            <base-name>com.npci.lms.library.web.i18n.message.messages</base-name>
             <var>msg</var>
         </resource-bundle>
 
-        <message-bundle>com.npci.isc.web.i18n.validation.messages</message-bundle>
+        <message-bundle>com.npci.lms.library.web.i18n.validation.messages</message-bundle>
 
         <locale-config>
             <default-locale>fa_IR</default-locale>
@@ -25,6 +25,6 @@
     </application>
 
     <lifecycle>
-        <phase-listener>com.npci.financial.isc.SwitchPhaseListener</phase-listener>
+        <phase-listener>com.npci.lms.library.listener.SwitchPhaseListener</phase-listener>
     </lifecycle>
 </faces-config>
