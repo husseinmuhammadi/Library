@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<f:view>
+
+    <h:form>
+        <h:outputText value="Primary account number"/>
+        <h:inputText value="#{cashWithdrawalController.cashWithdrawalRequest.primaryAccountNumber}"/>
+        <br/>
+
+        <h:outputText value="Transaction amount"/>
+        <h:inputText value="#{cashWithdrawalController.cashWithdrawalRequest.transactionAmount}"/>
+        <br/>
+
+        <h:outputText value="Cardholder billing amount"/>
+        <h:inputText value="#{cashWithdrawalController.cashWithdrawalRequest.cardholderBillingAmount}"/>
+        <br/>
+
+        <h:outputText value="Cardholder billing conversion rate"/>
+        <h:inputText value="#{cashWithdrawalController.cashWithdrawalRequest.cardholderBillingConversionRate}"/>
+        <br/>
+
+        <h:outputText value="Response code"/>
+        <h:inputText value="#{cashWithdrawalController.cashWithdrawalResponse.responseCode}"/>
+        <br/>
+
+        <h:commandButton value="Save" action="#{cashWithdrawalController.save}"/>
+        <h:commandButton value="Send to shetab" action="#{cashWithdrawalController.sendToInterbank}"/>
+        <h:commandButton value="Send to switch" action="#{cashWithdrawalController.sendToSwitch}"/>
+    </h:form>
+
+</f:view>
+</html>

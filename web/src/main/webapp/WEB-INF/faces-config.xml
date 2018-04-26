@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
+              version="2.2">
+    
+    <application>
+        <resource-bundle>
+            <base-name>com.npci.isc.web.i18n.label.messages</base-name>
+            <var>lbl</var>
+        </resource-bundle>
+
+        <resource-bundle>
+            <base-name>com.npci.isc.web.i18n.message.messages</base-name>
+            <var>msg</var>
+        </resource-bundle>
+
+        <message-bundle>com.npci.isc.web.i18n.validation.messages</message-bundle>
+
+        <locale-config>
+            <default-locale>fa_IR</default-locale>
+            <supported-locale>fa_IR</supported-locale>
+            <supported-locale>en_US</supported-locale>
+        </locale-config>
+    </application>
+
+    <lifecycle>
+        <phase-listener>com.npci.financial.isc.SwitchPhaseListener</phase-listener>
+    </lifecycle>
+</faces-config>

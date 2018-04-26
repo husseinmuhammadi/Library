@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.npci.isc</groupId>
+    <artifactId>switch-parent</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>../utility</module>
+
+        <module>../model</module>
+        <module>../api</module>
+        <module>../service</module>
+
+        <module>../web</module>
+        <module>../ear</module>
+    </modules>
+
+    <url>http://maven.apache.org</url>
+
+    <properties>
+        <web.artifactId>switch-web</web.artifactId>
+        <web.version>1.0.0-SNAPSHOT</web.version>
+        <web.archive.name>web</web.archive.name>
+        <web.contextroot>/switch-simulator</web.contextroot>
+
+        <api.artifactId>switch-api</api.artifactId>
+        <api.version>1.0.0-SNAPSHOT</api.version>
+        <api.archive.name>api</api.archive.name>
+
+        <service.artifactId>switch-service</service.artifactId>
+        <service.version>1.0.0-SNAPSHOT</service.version>
+        <service.archive.name>service</service.archive.name>
+
+        <model.artifactId>switch-model</model.artifactId>
+        <model.version>1.0.0-SNAPSHOT</model.version>
+        <model.archive.name>model</model.archive.name>
+
+        <ear.artifactId>switch-ear</ear.artifactId>
+        <ear.version>1.0.0-SNAPSHOT</ear.version>
+        <ear.archive.name>switch-simulator</ear.archive.name>
+
+        <utility.groupId>com.npci.isc</utility.groupId>
+        <utility.artifactId>utility</utility.artifactId>
+        <utility.version>1.0.0-SNAPSHOT</utility.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+            <version>7.0</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.7</version>
+        </dependency>
+	
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.1.3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.7</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!--
+        <dependency>
+            <groupId>ir.middle-east-bank.switch</groupId>
+            <artifactId>switch-logger</artifactId>
+            <version>1.0.2</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-api</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>ch.qos.logback</groupId>
+                    <artifactId>logback-classic</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        -->
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.2</version>
+                <configuration>
+                    <excludes>
+                        <exclude>${project.groupId}:${ear.artifactId}</exclude>
+                    </excludes>
+                    <verbose>true</verbose>
+                    <generatedTestSourcesDirectory>true</generatedTestSourcesDirectory>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <compilerArguments>
+                        <endorseddirs>${project.build.directory}/endorsed</endorseddirs>
+                    </compilerArguments>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <repositories>
+        <repository>
+            <id>oracleReleases</id>
+            <name>Oracle Released Java Packages</name>
+            <url>http://download.oracle.com/maven</url>
+            <layout>default</layout>
+        </repository>
+    </repositories>
+</project>
