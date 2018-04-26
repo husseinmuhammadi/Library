@@ -4,7 +4,7 @@ import javax.faces.event.PhaseEvent;
 import javax.faces.event.PhaseId;
 import javax.faces.event.PhaseListener;
 
-public class SwitchPhaseListener implements PhaseListener {
+public class LibraryPhaseLogger implements PhaseListener {
     @Override
     public void afterPhase(PhaseEvent phaseEvent) {
         System.out.println("--- After phase: " + phaseEvent.getPhaseId());

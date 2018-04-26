@@ -25,6 +25,6 @@
     </application>
 
     <lifecycle>
-        <phase-listener>com.npci.lms.library.listener.SwitchPhaseListener</phase-listener>
+        <phase-listener>com.npci.lms.library.listener.LibraryPhaseLogger</phase-listener>
     </lifecycle>
 </faces-config>
