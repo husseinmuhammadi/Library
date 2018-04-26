@@ -1,4 +1,4 @@
-package com.npci.lms.library.listener;
+package com.npci.lms.library.web.listener;
 
 import javax.faces.event.PhaseEvent;
 import javax.faces.event.PhaseId;

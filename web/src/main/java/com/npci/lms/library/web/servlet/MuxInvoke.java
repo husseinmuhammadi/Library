@@ -1,4 +1,4 @@
-package com.npci.lms.library.servlet;
+package com.npci.lms.library.web.servlet;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;

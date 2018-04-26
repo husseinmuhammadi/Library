@@ -1,4 +1,4 @@
-package com.npci.lms.library.controller.sample.animal;
+package com.npci.lms.library.web.controller.sample.animal;
 
 import com.npci.lms.library.api.sample.AnimalService;
 import com.npci.lms.library.model.to.Animal;

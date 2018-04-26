@@ -1,4 +1,4 @@
-package com.npci.financial.isc.controller;
+package com.npci.lms.library.web.controller;
 
 
 import com.npci.lms.library.api.SampleService;
