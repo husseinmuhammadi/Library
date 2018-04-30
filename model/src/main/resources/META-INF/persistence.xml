@@ -7,8 +7,22 @@
     <persistence-unit name="primary-persistence-unit" transaction-type="JTA">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
-        <jta-data-source>java:/jdbc/Library</jta-data-source>
+        <jta-data-source>java:/jdbc/LibraryDS</jta-data-source>
         <class>com.npci.lms.library.model.to.Book</class>
+
+        <class>com.npci.lms.library.model.to.Author</class>
+        <class>com.npci.lms.library.model.to.Person</class>
+        <class>com.npci.lms.library.model.to.Publisher</class>
+        <class>com.npci.lms.library.model.to.User</class>
+        <class>com.npci.lms.library.model.to.Role</class>
+        <class>com.npci.lms.library.model.to.Permission</class>
+        <class>com.npci.lms.library.model.to.UserActivity</class>
+        <class>com.npci.lms.library.model.to.Document</class>
+        <class>com.npci.lms.library.model.to.UserRole</class>
+        <class>com.npci.lms.library.model.to.RolePermission</class>
+        <class>com.npci.lms.library.model.to.UserAccount</class>
+        <class>com.npci.lms.library.model.to.BookHistory</class>
+
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
         <shared-cache-mode>NONE</shared-cache-mode>
         <properties>
