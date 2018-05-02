@@ -52,13 +52,6 @@
             <version>${utility.version}</version>
             <scope>provided</scope>
         </dependency>
-
-        <dependency>
-            <groupId>org.jpos</groupId>
-            <artifactId>jpos</artifactId>
-            <version>2.1.1</version>
-            <scope>provided</scope>
-        </dependency>
     </dependencies>
 
     <build>
