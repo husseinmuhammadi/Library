@@ -1,6 +1,5 @@
 package com.npci.lms.library.model.dao;
 
-import com.npci.lms.library.model.to.Animal;
 import com.npci.lms.library.model.to.Book;
 
 import javax.ejb.Stateless;
