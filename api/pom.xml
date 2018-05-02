@@ -34,7 +34,7 @@
                 <configuration>
                     <archive>
                         <manifestEntries>
-                            <Class-Path>${model.archive.name}</Class-Path>
+                            <Class-Path>${model.archive.name}.jar</Class-Path>
                         </manifestEntries>
                         <!--
                         <manifest>
