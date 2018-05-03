@@ -6,20 +6,23 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 <f:view>
-    <h:form>
-        <h:outputText value="Id"/>
-        <h:inputText value="#{bookController.book.id}"/>
-        <br/>
-        <h:outputText value="Name"/>
-        <h:inputText value="#{bookController.book.name}"/>
-        <br/>
-        <h:outputText value="Title"/>
-        <h:inputText value="#{bookController.book.title}"/>
-        <br/>
-        <h:outputText value="Description"/>
-        <h:inputText value="#{bookController.book.description}"/>
-        <br/>
-        <h:commandButton value="Save" action="#{bookController.save}"/>
-    </h:form>
+    <h:body>
+        <h:messages/>
+        <h:form>
+            <h:outputText value="Id"/>
+            <h:inputText value="#{bookController.book.id}"/>
+            <br/>
+            <h:outputText value="Name"/>
+            <h:inputText value="#{bookController.book.name}"/>
+            <br/>
+            <h:outputText value="Title"/>
+            <h:inputText value="#{bookController.book.title}"/>
+            <br/>
+            <h:outputText value="Description"/>
+            <h:inputText value="#{bookController.book.description}"/>
+            <br/>
+            <h:commandButton value="Save" action="#{bookController.save}"/>
+        </h:form>
+    </h:body>
 </f:view>
 </html>
