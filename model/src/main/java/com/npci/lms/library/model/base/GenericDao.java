@@ -1,7 +1,7 @@
 package com.npci.lms.library.model.base;
 
-import com.npci.lms.library.model.base.EntityBase;
 import com.npci.lms.library.model.exception.EntityIdIsNullException;
+import com.npci.lms.library.model.to.EntityBase;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

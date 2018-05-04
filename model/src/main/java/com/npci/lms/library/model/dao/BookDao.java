@@ -1,20 +1,19 @@
 package com.npci.lms.library.model.dao;
 
+import com.npci.lms.library.model.base.GenericDao;
 import com.npci.lms.library.model.to.Book;
 
 import javax.ejb.Stateless;
-import javax.enterprise.context.Dependent;
-import javax.inject.Inject;
-import javax.persistence.EntityManager;
+import java.util.List;
 
-@Dependent
 @Stateless
-public class BookDao {
-    @Inject
-    private EntityManager entityManager;
+public class BookDao extends GenericDao<Book> {
+    public BookDao() {
+        super(Book.class);
+    }
 
-    public Book save(Book book) {
-        entityManager.persist(book);
-        return book;
+    @Override
+    public List<Book> findAll() {
+        return null;
     }
 }
