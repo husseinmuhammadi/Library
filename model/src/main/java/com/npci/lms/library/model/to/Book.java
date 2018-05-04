@@ -5,7 +5,7 @@ import javax.persistence.SequenceGenerator;
 
 @Entity
 @SequenceGenerator(name = "SEQ_GENERATOR", sequenceName = "BOOK_SEQ")
-public class Book extends BaseEntity {
+public class Book extends EntityBase {
 
 
     private String name;
