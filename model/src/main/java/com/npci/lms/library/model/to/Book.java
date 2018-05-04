@@ -6,14 +6,15 @@ import javax.persistence.SequenceGenerator;
 @Entity
 @SequenceGenerator(name = "SEQ_GENERATOR", sequenceName = "BOOK_SEQ")
 public class Book extends EntityBase {
-
-
+    //region Fields
     private String name;
 
     private String title;
 
     private String description;
+    //endregion Fields
 
+    //region Getter & Setter
     public String getName() {
         return name;
     }
@@ -37,4 +38,5 @@ public class Book extends EntityBase {
     public void setDescription(String description) {
         this.description = description;
     }
+    //endregion Getter & Setter
 }
