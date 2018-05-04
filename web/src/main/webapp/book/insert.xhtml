@@ -18,7 +18,8 @@
             <h:outputText value="Description"/>
             <h:inputText value="#{bookController.book.description}"/>
             <br/>
-            <h:commandButton value="Save" action="#{bookController.save}"/>
+            <h:commandButton value="Save" action="#{bookController.save}" rendered="#{empty bookController.book.id}"/>
+            <h:commandButton value="Update" action="#{bookController.edit}" rendered="#{not empty bookController.book.id}"/>
         </h:form>
     </h:body>
 </f:view>
