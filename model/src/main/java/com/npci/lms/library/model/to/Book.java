@@ -1,29 +1,18 @@
 package com.npci.lms.library.model.to;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 
 @Entity
-public class Book {
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private Long id;
+@SequenceGenerator(name = "SEQ_GENERATOR", sequenceName = "BOOK_SEQ")
+public class Book extends BaseEntity {
+
 
     private String name;
 
     private String title;
 
     private String description;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;
