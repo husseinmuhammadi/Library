@@ -39,7 +39,7 @@ public class BookController implements Serializable {
 
     public void edit() {
         try {
-            service.update(book);
+            book = service.update(book);
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Book edited successfully"));
         } catch (Exception e) {
             e.printStackTrace();
