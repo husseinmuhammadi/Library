@@ -40,7 +40,7 @@ public class BookController implements Serializable {
     public void edit() {
         try {
             book = service.update(book);
-            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Book edited successfully"));
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Book edited successfully to version " + book.getVersion()));
         } catch (Exception e) {
             e.printStackTrace();
             // FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error while saving book", e.getMessage()));
