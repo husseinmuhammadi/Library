@@ -14,6 +14,6 @@ public class BookDao extends GenericDao<Book> {
 
     @Override
     public List<Book> findAll() {
-        return null;
+        return createNamedQuery(Book.FIND_ALL).getResultList();
     }
 }

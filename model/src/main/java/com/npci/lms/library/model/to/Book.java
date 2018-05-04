@@ -1,11 +1,20 @@
 package com.npci.lms.library.model.to;
 
-import javax.persistence.Entity;
-import javax.persistence.SequenceGenerator;
+import javax.persistence.*;
+
+import static com.npci.lms.library.model.to.Book.FIND_ALL;
 
 @Entity
+@Table(name = "BOOK")
 @SequenceGenerator(name = "SEQ_GENERATOR", sequenceName = "BOOK_SEQ")
+@NamedQueries({
+        @NamedQuery(name = FIND_ALL, query = "select t from Book t where t.deleted = false ")
+})
 public class Book extends EntityBase {
+    //region Constants
+    public static final String FIND_ALL = "Book.findAll";
+    //endregion Constants
+
     //region Fields
     private String name;
 
