@@ -16,6 +16,8 @@ import java.io.Serializable;
 @ViewScoped
 public class BookController implements Serializable {
 
+    private static final long serialVersionUID = -2013781764891045591L;
+
     private Book book;
 
     @EJB

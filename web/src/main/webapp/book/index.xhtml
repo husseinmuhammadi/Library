@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<f:view>
+    <h:head>
+        <f:facet name="first">
+            <h:outputScript library="js" name="jquery-2.1.4.min.js"/>
+            <h:outputScript library="js" name="jquery-ui.min.js"/>
+            <h:outputStylesheet library="en_US" name="css/bootstrap.min.css"/>
+            <h:outputStylesheet library="en_US" name="css/bootstrap-theme.css"/>
+        </f:facet>
+        <style type="text/css">
+            .order-table {
+                border-collapse: collapse;
+            }
+
+            .order-table-header {
+                text-align: center;
+                background: none repeat scroll 0 0 #e5e5e5;
+                border-bottom: 1px solid #BBBBBB;
+                padding: 16px;
+            }
+
+            .order-table-odd-row {
+                text-align: center;
+                background: none repeat scroll 0 0 #ffffff;
+                border-top: 1px solid #BBBBBB;
+            }
+
+            .order-table-even-row {
+                text-align: center;
+                background: none repeat scroll 0 0 #f9f9f9;
+                border-top: 1px solid #BBBBBB;
+            }
+
+            .red-color {
+                color: red;
+            }
+        </style>
+    </h:head>
+    <h:body>
+        <div style="font-size:x-large;font-style: italic;font-weight: bold;" class="red-color">Book Data Table</div>
+        <h:dataTable value="#{bookManager.books}" var="book"
+                     styleClass="order-table"
+                     headerClass="order-table-header"
+                     rowClasses="order-table-odd-row, order-table-even-row">
+            <h:column>
+                <f:facet name="header">id</f:facet>
+                #{book.id}
+            </h:column>
+            <h:column>
+                <f:facet name="header">name</f:facet>
+                #{book.name}
+            </h:column>
+            <h:column>
+                <f:facet name="header">title</f:facet>
+                #{book.title}
+            </h:column>
+            <h:column>
+                <f:facet name="header">description</f:facet>
+                #{book.description}
+            </h:column>
+        </h:dataTable>
+    </h:body>
+</f:view>
+</html>
