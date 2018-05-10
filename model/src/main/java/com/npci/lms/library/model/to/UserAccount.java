@@ -6,6 +6,6 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "USER_ACCOUNT")
-@SequenceGenerator(name = "", sequenceName = "USER_ACCOUNT_SEQ")
+@SequenceGenerator(name = "SEQ_GENERATOR", sequenceName = "USER_ACCOUNT_SEQ")
 public class UserAccount extends EntityBase {
 }
