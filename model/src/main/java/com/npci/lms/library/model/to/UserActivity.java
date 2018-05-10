@@ -1,39 +1,11 @@
 package com.npci.lms.library.model.to;
 
 import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 
 @Entity
-public class UserActivity {
-
-    @Id
-    private Long id;
-
-    private String activity;
-
-    private String description;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getActivity() {
-        return activity;
-    }
-
-    public void setActivity(String activity) {
-        this.activity = activity;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
+@Table(name = "USER_ACTIVITY")
+@SequenceGenerator(name = "SEQ_GENERATOR", sequenceName = "USER_ACTIVITY_SEQ")
+public class UserActivity extends EntityBase {
 }
