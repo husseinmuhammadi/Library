@@ -36,6 +36,9 @@ public abstract class EntityBase {
     @Column(name = "IS_DELETED", nullable = false, columnDefinition = "NUMBER(1,0) default 0")
     private Boolean deleted = Boolean.FALSE;
 
+    @Column(length = 500)
+    private String description;
+
     @PrePersist
     private void prePersist() {
         createOn = new Date();
@@ -85,6 +88,14 @@ public abstract class EntityBase {
 
     public void setVersion(Long version) {
         this.version = version;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public void resetValues() {
