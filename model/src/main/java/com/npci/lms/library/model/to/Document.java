@@ -9,5 +9,7 @@ import javax.persistence.*;
         @NamedQuery(name = "dd", query = "from Document where deleted = false ")
 })
 public class Document extends EntityBase {
-
+    @Lob
+    @Basic(fetch = FetchType.LAZY)
+    private byte[] content;
 }
