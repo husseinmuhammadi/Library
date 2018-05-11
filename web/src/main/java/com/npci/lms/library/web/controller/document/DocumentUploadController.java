@@ -1,4 +1,4 @@
-package com.npci.lms.library.web.controller;
+package com.npci.lms.library.web.controller.document;
 
 import com.npci.lms.library.api.DocumentService;
 import com.npci.lms.library.model.to.Document;
