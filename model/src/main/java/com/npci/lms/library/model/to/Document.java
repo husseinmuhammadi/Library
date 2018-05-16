@@ -24,7 +24,7 @@ public class Document extends EntityBase {
      * @return The content type of this document.
      */
     @Column(name = "CONTENT_TYPE", nullable = false)
-    public String contentType;
+    private String contentType;
 
     /**
      * Gets the name of this document
@@ -32,7 +32,7 @@ public class Document extends EntityBase {
      * @return The name of this document as a <tt>String</tt>
      */
     @Column(name = "NAME", nullable = false)
-    public String name;
+    private String name;
 
     /**
      * Gets the file name specified by the client
@@ -42,7 +42,7 @@ public class Document extends EntityBase {
      * @since Servlet 3.1
      */
     @Column(name = "SUBMITTED_FILE_NAME", nullable = false)
-    public String submittedFileName;
+    private String submittedFileName;
 
     /**
      * Returns the size of this fille.
@@ -50,7 +50,7 @@ public class Document extends EntityBase {
      * @return a <code>long</code> specifying the size of this part, in bytes.
      */
     @Column(name = "LENGTH", nullable = false)
-    public Long length;
+    private Long length;
 
     /**
      * Gets the content of this part as an <tt>InputStream</tt>

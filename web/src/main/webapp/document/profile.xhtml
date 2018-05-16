@@ -12,10 +12,20 @@
 
 <f:view>
     <h:form>
-        <h:outputLabel value="id"/>
+        <h:outputLabel value="id: "/>
         <h:outputText value="#{documentController.document.id}"/>
-        <h:commandButton value="download" action="#{documentController.download}">
+        <br/>
+        <h:outputLabel value="name: "/>
+        <h:outputText value="#{documentController.document.name}"/>
+        <br/>
+        <h:outputLabel value="submittedFileName: "/>
+        <h:outputText value="#{documentController.document.submittedFileName}"/>
+        <br/>
+        <h:outputLabel value="contentType: "/>
+        <h:outputText value="#{documentController.document.contentType}"/>
+        <br/>
 
+        <h:commandButton value="download" action="#{documentController.download}">
         </h:commandButton>
     </h:form>
 </f:view>

@@ -50,8 +50,8 @@ public class DocumentController extends ControllerBase<Document> {
 
     public void download() {
         HttpServletResponse response = getHttpServletResponse();
-        String fileName = "1.pdf";
-        response.setContentType("application/pdf");
+        String fileName = t.getSubmittedFileName();
+        response.setContentType(t.getContentType());
         response.setHeader("Content-Disposition", "inline;filename=\"" + fileName + "\"");
         byte[] content = getDocument().getContent();
         response.setContentLength(content.length);
