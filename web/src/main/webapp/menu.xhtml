@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<f:view>
+    <h:form>
+        <div>
+            <h:outputLabel value="Select Menu"/>
+        </div>
+
+
+        <div>
+            <h:outputText id="menuLabel"/>
+            <h:selectOneMenu value="#{menuController.menuSelect}" id="menuSelect">
+                <f:selectItem itemValue="1" itemLabel="Item01"/>
+                <f:selectItem itemValue="2" itemLabel="Item02"/>
+                <f:selectItem itemValue="3" itemLabel="Item03"/>
+            </h:selectOneMenu>
+        </div>
+        <div>
+            <h:commandButton value="Show Select Item" action="#{menuController.showSelected}"/>
+        </div>
+    </h:form>
+</f:view>
+</html>
