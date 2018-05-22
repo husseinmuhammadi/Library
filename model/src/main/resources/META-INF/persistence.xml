@@ -40,6 +40,30 @@
             <property name="hibernate.max_fetch_depth" value="3"/>
         </properties>
     </persistence-unit>
+
+    <persistence-unit name="secondary-persistence-unit" transaction-type="JTA">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+        <jta-data-source>java:/jdbc/LibrarySecondary</jta-data-source>
+
+        <class>com.npci.lms.library.model.to.trade.Product</class>
+        <class>com.npci.lms.library.model.to.trade.ProductSpecification</class>
+
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+        <shared-cache-mode>NONE</shared-cache-mode>
+        <properties>
+            <property name="javax.persistence.schema-generation.database.action" value="none"/>
+            <property name="javax.persistence.sql-load-script-source" value="META-INF/insert.sql"/>
+
+            <property name="hibernate.dialect" value="com.npci.lms.library.model.persistence.dialect.hibernate.OracleDialect"/>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+
+            <property name="hibernate.max_fetch_depth" value="3"/>
+        </properties>
+    </persistence-unit>
 </persistence>
 
 
