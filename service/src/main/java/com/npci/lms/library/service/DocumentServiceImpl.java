@@ -12,7 +12,7 @@ import javax.ejb.Stateless;
 
 @Stateless
 @Local(DocumentService.class)
-public class DocumentServiceImpl extends GeneralServiceImpl<Document> {
+public class DocumentServiceImpl extends GeneralServiceImpl<Document> implements DocumentService {
 
     //region EJB
     @EJB

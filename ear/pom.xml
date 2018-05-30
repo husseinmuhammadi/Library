@@ -121,6 +121,7 @@
                 -->
 
                 <executions>
+                    <!--
                     <execution>
                         <id>undeploy</id>
                         <phase>clean</phase>
@@ -139,6 +140,7 @@
                             <goal>deploy</goal>
                         </goals>
                     </execution>
+                    -->
                 </executions>
             </plugin>
         </plugins>

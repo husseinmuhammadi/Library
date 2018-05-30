@@ -14,8 +14,8 @@ public abstract class GeneralServiceImpl<T extends EntityBase> implements Genera
     public abstract GenericDao<T> getGenericDao();
 
     @Override
-    public T save(T entity) {
-        return getGenericDao().create(entity);
+    public T save(T t) {
+        return getGenericDao().create(t);
     }
 
     @Override

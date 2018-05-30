@@ -1,7 +1,9 @@
 package com.npci.lms.library.web.controller.book;
 
 import com.npci.lms.library.api.BookService;
+import com.npci.lms.library.api.GeneralService;
 import com.npci.lms.library.model.to.Book;
+import com.npci.lms.library.web.controller.base.ControllerBase;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
@@ -14,67 +16,31 @@ import java.io.Serializable;
 
 @Named
 @ViewScoped
-public class BookController implements Serializable {
+public class BookController extends ControllerBase<Book> implements Serializable {
 
+    //region Constants
     private static final long serialVersionUID = -2013781764891045591L;
+    //endregion Constants
 
-    private Book book;
-
+    //region Service
     @EJB
     private BookService service;
+    //endregion Service
+
+    //region Overrides
+    @Override
+    public GeneralService<Book> getGeneralServiceApi() {
+        return service;
+    }
+
+    @Override
+    public void afterLoad() {
+
+    }
+    //endregion Overrides
 
     @PostConstruct
     private void init() {
-        book = new Book();
-    }
-
-    public void save() {
-        try {
-            service.save(book);
-            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Book saved successfully"));
-        } catch (Exception e) {
-            e.printStackTrace();
-            // FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error while saving book", e.getMessage()));
-            printErrorMessage(e);
-        }
-    }
-
-    public void edit() {
-        try {
-            book = service.update(book);
-            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Book edited successfully to version " + book.getVersion()));
-        } catch (Exception e) {
-            e.printStackTrace();
-            // FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error while saving book", e.getMessage()));
-            printErrorMessage(e);
-        }
-    }
-
-    public Book getBook() {
-        return book;
-    }
-
-    public void setBook(Book book) {
-        this.book = book;
-    }
-
-    protected void printErrorMessage(Throwable e) {
-        // ResourceBundle resourceBundle = ResourceManager.getMessageBundle();
-        // FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(resourceBundle.getString("request.error")));
-        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("request.error"));
-
-        ProjectStage projectStage = FacesContext.getCurrentInstance().getApplication().getProjectStage();
-        if (projectStage != null && projectStage.equals(ProjectStage.Development)) {
-            Throwable cause = e.getCause();
-            if (cause == null)
-                FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(e.toString()));
-            while (cause != null /* && !(cause instanceof SQLException)*/) {
-                FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(cause.toString()));
-
-                // if (cause instanceof javax.persistence.PersistenceException) entity.setId(null);
-
-                cause = cause.getCause();
-            }
-        }
+        t = new Book();
     }
 }

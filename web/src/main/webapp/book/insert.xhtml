@@ -10,16 +10,16 @@
         <h:messages/>
         <h:form>
             <h:outputText value="Name"/>
-            <h:inputText value="#{bookController.book.name}"/>
+            <h:inputText value="#{bookController.templateObject.name}"/>
             <br/>
             <h:outputText value="Title"/>
-            <h:inputText value="#{bookController.book.title}"/>
+            <h:inputText value="#{bookController.templateObject.title}"/>
             <br/>
             <h:outputText value="Description"/>
-            <h:inputText value="#{bookController.book.description}"/>
+            <h:inputText value="#{bookController.templateObject.description}"/>
             <br/>
-            <h:commandButton value="Save" action="#{bookController.save}" rendered="#{empty bookController.book.id}"/>
-            <h:commandButton value="Update" action="#{bookController.edit}" rendered="#{not empty bookController.book.id}"/>
+            <h:commandButton value="Save" action="#{bookController.save}" rendered="#{empty bookController.templateObject.id}"/>
+            <h:commandButton value="Update" action="#{bookController.edit}" rendered="#{not empty bookController.templateObject.id}"/>
         </h:form>
     </h:body>
 </f:view>
