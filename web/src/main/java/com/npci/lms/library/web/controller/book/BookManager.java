@@ -1,7 +1,9 @@
 package com.npci.lms.library.web.controller.book;
 
 import com.npci.lms.library.api.BookService;
+import com.npci.lms.library.api.GeneralService;
 import com.npci.lms.library.model.to.Book;
+import com.npci.lms.library.web.controller.base.ManagerBase;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
@@ -12,25 +14,15 @@ import java.util.List;
 
 @Named
 @ViewScoped
-public class BookManager implements Serializable {
+public class BookManager extends ManagerBase<Book> implements Serializable {
 
     private static final long serialVersionUID = -7262624294036362746L;
-
-    private List<Book> books;
 
     @EJB
     private BookService service;
 
-    @PostConstruct
-    private void init() {
-        books = service.findAll();
-    }
-
-    public List<Book> getBooks() {
-        return books;
-    }
-
-    public void setBooks(List<Book> books) {
-        this.books = books;
+    @Override
+    public GeneralService<Book> getGeneralServiceApi() {
+        return service;
     }
 }

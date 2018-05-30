@@ -1,13 +1,12 @@
 package com.npci.lms.library.web.controller;
 
-import com.npci.lms.library.web.controller.base.ManagerBase;
-
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
+import java.io.Serializable;
 
 @Named
 @ViewScoped
-public class MenuController extends ManagerBase {
+public class MenuController implements Serializable {
 
     private static final long serialVersionUID = 6681198964562456692L;
 

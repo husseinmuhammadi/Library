@@ -12,6 +12,7 @@ import javax.faces.application.ProjectStage;
 import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
+import javax.xml.transform.Templates;
 import java.io.Serializable;
 
 @Named
@@ -41,6 +42,6 @@ public class BookController extends ControllerBase<Book> implements Serializable
 
     @PostConstruct
     private void init() {
-        t = new Book();
+        templateObject = new Book();
     }
 }

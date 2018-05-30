@@ -21,7 +21,7 @@ public abstract class ControllerBase<T extends EntityBase> extends SimpleControl
 
     private Long id;
 
-    protected T t;
+    protected T templateObject;
 
     //endregion Fields
 
@@ -30,8 +30,8 @@ public abstract class ControllerBase<T extends EntityBase> extends SimpleControl
     @Override
     public void onLoad() {
         if (id != null) {
-            t = getGeneralServiceApi().find(id);
-            if (t == null) {
+            templateObject = getGeneralServiceApi().find(id);
+            if (templateObject == null) {
                 try {
                     FacesContext.getCurrentInstance().getExternalContext().dispatch("index");
                 } catch (IOException e) {
@@ -51,7 +51,7 @@ public abstract class ControllerBase<T extends EntityBase> extends SimpleControl
 
     public void save() {
         try {
-            getGeneralServiceApi().save(t);
+            getGeneralServiceApi().save(templateObject);
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Book saved successfully"));
         } catch (Exception e) {
             e.printStackTrace();
@@ -62,8 +62,8 @@ public abstract class ControllerBase<T extends EntityBase> extends SimpleControl
 
     public void edit() {
         try {
-            t = getGeneralServiceApi().update(t);
-            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Book edited successfully to version " + t.getVersion()));
+            templateObject = getGeneralServiceApi().update(templateObject);
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Book edited successfully to version " + templateObject.getVersion()));
         } catch (Exception e) {
             e.printStackTrace();
             // FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error while saving book", e.getMessage()));
@@ -84,12 +84,11 @@ public abstract class ControllerBase<T extends EntityBase> extends SimpleControl
     }
 
     public T getTemplateObject() {
-        return t;
+        return templateObject;
     }
 
-    public void setTemplateObject(T t) {
-        this.t = t;
+    public void setTemplateObject(T templateObject) {
+        this.templateObject = templateObject;
     }
-
     //endregion Getter & Setter
 }

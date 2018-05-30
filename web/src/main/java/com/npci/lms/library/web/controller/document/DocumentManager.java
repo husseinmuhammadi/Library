@@ -1,6 +1,7 @@
 package com.npci.lms.library.web.controller.document;
 
 import com.npci.lms.library.api.DocumentService;
+import com.npci.lms.library.api.GeneralService;
 import com.npci.lms.library.model.to.Document;
 import com.npci.lms.library.web.controller.base.ManagerBase;
 
@@ -12,7 +13,7 @@ import java.util.List;
 
 @Named
 @ViewScoped
-public class DocumentManager extends ManagerBase {
+public class DocumentManager extends ManagerBase<Document> {
     //region Constants
 
     private static final long serialVersionUID = -5002171001755740308L;
@@ -40,6 +41,15 @@ public class DocumentManager extends ManagerBase {
     }
 
     //endregion Methods
+
+    //region Overrides
+
+    @Override
+    public GeneralService<Document> getGeneralServiceApi() {
+        return service;
+    }
+
+    //endregion Overrides
 
     //region Getter & Setter
 

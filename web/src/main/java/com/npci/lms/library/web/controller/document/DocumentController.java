@@ -50,8 +50,8 @@ public class DocumentController extends ControllerBase<Document> {
 
     public void download() {
         HttpServletResponse response = getHttpServletResponse();
-        String fileName = t.getSubmittedFileName();
-        response.setContentType(t.getContentType());
+        String fileName = templateObject.getSubmittedFileName();
+        response.setContentType(templateObject.getContentType());
         response.setHeader("Content-Disposition", "inline;filename=\"" + fileName + "\"");
         byte[] content = getDocument().getContent();
         response.setContentLength(content.length);
@@ -68,11 +68,11 @@ public class DocumentController extends ControllerBase<Document> {
     //region Getter & Setter
 
     public Document getDocument() {
-        return super.t;
+        return super.templateObject;
     }
 
     public void setDocument(Document document) {
-        super.t = document;
+        super.templateObject = document;
     }
 
     //endregion Getter & Setter
