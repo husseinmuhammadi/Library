@@ -13,16 +13,16 @@
 <f:view>
     <h:form>
         <h:outputLabel value="id: "/>
-        <h:outputText value="#{documentController.document.id}"/>
+        <h:outputText value="#{documentController.templateObject.id}"/>
         <br/>
         <h:outputLabel value="name: "/>
-        <h:outputText value="#{documentController.document.name}"/>
+        <h:outputText value="#{documentController.templateObject.name}"/>
         <br/>
         <h:outputLabel value="submittedFileName: "/>
-        <h:outputText value="#{documentController.document.submittedFileName}"/>
+        <h:outputText value="#{documentController.templateObject.submittedFileName}"/>
         <br/>
         <h:outputLabel value="contentType: "/>
-        <h:outputText value="#{documentController.document.contentType}"/>
+        <h:outputText value="#{documentController.templateObject.contentType}"/>
         <br/>
 
         <h:commandButton value="download" action="#{documentController.download}">

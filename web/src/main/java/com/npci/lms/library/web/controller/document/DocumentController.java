@@ -53,7 +53,7 @@ public class DocumentController extends ControllerBase<Document> {
         String fileName = templateObject.getSubmittedFileName();
         response.setContentType(templateObject.getContentType());
         response.setHeader("Content-Disposition", "inline;filename=\"" + fileName + "\"");
-        byte[] content = getDocument().getContent();
+        byte[] content = templateObject.getContent();
         response.setContentLength(content.length);
 
         try (OutputStream outputStream = response.getOutputStream()) {
@@ -66,14 +66,6 @@ public class DocumentController extends ControllerBase<Document> {
     //endregion Methods
 
     //region Getter & Setter
-
-    public Document getDocument() {
-        return super.templateObject;
-    }
-
-    public void setDocument(Document document) {
-        super.templateObject = document;
-    }
 
     //endregion Getter & Setter
 }

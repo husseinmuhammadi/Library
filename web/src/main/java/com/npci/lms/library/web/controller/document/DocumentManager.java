@@ -29,16 +29,9 @@ public class DocumentManager extends ManagerBase<Document> {
 
     //region Fields
 
-    private List<Document> documents;
-
     //endregion Fields
 
     //region Methods
-
-    @PostConstruct
-    private void init(){
-        documents = service.findAll();
-    }
 
     //endregion Methods
 
@@ -52,14 +45,6 @@ public class DocumentManager extends ManagerBase<Document> {
     //endregion Overrides
 
     //region Getter & Setter
-
-    public List<Document> getDocuments() {
-        return documents;
-    }
-
-    public void setDocuments(List<Document> documents) {
-        this.documents = documents;
-    }
 
     //endregion Getter & Setter
 }
