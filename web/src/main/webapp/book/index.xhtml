@@ -6,27 +6,29 @@
                 template="/base/template2.xhtml">
 
     <ui:define name="content">
-        <div style="font-size:x-large;font-style: italic;font-weight: bold;" class="red-color">Book Data Table</div>
-        <h:dataTable value="#{bookManager.templateObjects}" var="book"
-                     styleClass="table">
-            <h:column>
-                <f:facet name="header">id</f:facet>
-                <h:link value="#{book.id}" outcome="profile">
-                    <f:param name="id" value="#{book.id}"/>
-                </h:link>
-            </h:column>
-            <h:column>
-                <f:facet name="header">name</f:facet>
-                #{book.name}
-            </h:column>
-            <h:column>
-                <f:facet name="header">title</f:facet>
-                #{book.title}
-            </h:column>
-            <h:column>
-                <f:facet name="header">description</f:facet>
-                #{book.description}
-            </h:column>
-        </h:dataTable>
+        <div class="container">
+            <h2>Books</h2>
+            <h:dataTable value="#{bookManager.templateObjects}" var="book"
+                         styleClass="table">
+                <h:column>
+                    <f:facet name="header">id</f:facet>
+                    <h:link value="#{book.id}" outcome="profile">
+                        <f:param name="id" value="#{book.id}"/>
+                    </h:link>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">name</f:facet>
+                    #{book.name}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">title</f:facet>
+                    #{book.title}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">description</f:facet>
+                    #{book.description}
+                </h:column>
+            </h:dataTable>
+        </div>
     </ui:define>
 </ui:composition>
