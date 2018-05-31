@@ -3,40 +3,9 @@
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 xmlns:f="http://xmlns.jcp.org/jsf/core"
-                template="/base/template.xhtml">
+                template="/base/template2.xhtml">
 
-    <ui:define name="head">
-        <style type="text/css">
-            .order-table {
-                border-collapse: collapse;
-            }
-
-            .order-table-header {
-                text-align: center;
-                background: none repeat scroll 0 0 #e5e5e5;
-                border-bottom: 1px solid #BBBBBB;
-                padding: 16px;
-            }
-
-            .order-table-odd-row {
-                text-align: center;
-                background: none repeat scroll 0 0 #ffffff;
-                border-top: 1px solid #BBBBBB;
-            }
-
-            .order-table-even-row {
-                text-align: center;
-                background: none repeat scroll 0 0 #f9f9f9;
-                border-top: 1px solid #BBBBBB;
-            }
-
-            .red-color {
-                color: red;
-            }
-        </style>
-    </ui:define>
-
-    <ui:define name="main">
+    <ui:define name="content">
         <div style="font-size:x-large;font-style: italic;font-weight: bold;" class="red-color">Book Data Table</div>
         <h:dataTable value="#{bookManager.templateObjects}" var="book"
                      styleClass="order-table"

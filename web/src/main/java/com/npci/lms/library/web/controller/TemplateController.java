@@ -15,15 +15,16 @@ import java.util.Locale;
 @SessionScoped
 public class TemplateController implements Serializable {
 
+    private static final long serialVersionUID = -4753352775816088030L;
     @Inject
     private UserInformation userInformation;
 
     private String localeValue = "en_US";
 
-    private boolean administrator;
+    private boolean administrator = true;
 
     public String getLocaleValue() {
-        administrator = SecurityUtils.getSubject().hasRole("administrator");
+        // administrator = SecurityUtils.getSubject().hasRole("administrator");
         return localeValue;
     }
 
