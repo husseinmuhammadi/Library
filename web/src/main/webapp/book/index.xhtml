@@ -9,7 +9,7 @@
         <div class="container">
             <h2>Books</h2>
             <h:dataTable value="#{bookManager.templateObjects}" var="book"
-                         styleClass="table">
+                         styleClass="table table-striped">
                 <h:column>
                     <f:facet name="header">id</f:facet>
                     <h:link value="#{book.id}" outcome="profile">

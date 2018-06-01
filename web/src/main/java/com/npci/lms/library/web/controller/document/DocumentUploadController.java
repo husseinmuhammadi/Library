@@ -3,8 +3,6 @@ package com.npci.lms.library.web.controller.document;
 import com.dpi.financial.ftcom.utility.json.JsonCollectors;
 import com.npci.lms.library.api.DocumentService;
 import com.npci.lms.library.model.to.Document;
-import org.codehaus.jackson.map.ObjectMapper;
-import org.primefaces.json.JSONObject;
 
 import javax.ejb.EJB;
 import javax.faces.view.ViewScoped;

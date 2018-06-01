@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                template="/base/template3.xhtml">
+
+    <ui:define name="head">
+        <script type="text/javascript">
+            jsf.ajax.addOnEvent(function (data) {
+                var ajaxstatus = data.status; // Can be "begin", "complete" and "success"
+                var ajaxloader = document.getElementById("ajaxloader");
+
+                switch (ajaxstatus) {
+                    case "begin": // This is called right before ajax request is been sent.
+                        ajaxloader.style.display = 'block';
+                        break;
+
+                    case "complete": // This is called right after ajax response is received.
+                        ajaxloader.style.display = 'none';
+                        break;
+
+                    case "success": // This is called when ajax response is successfully processed.
+                        // NOOP.
+                        break;
+                }
+            });
+        </script>
+    </ui:define>
+
+    <ui:define name="content">
+        <div class="container">
+            <h2>Books</h2>
+            <h:dataTable value="#{bookManager.templateObjects}" var="book"
+                         styleClass="table table-striped table-hover">
+                <h:column>
+                    <f:facet name="header">id</f:facet>
+                    <h:link value="#{book.id}" outcome="profile">
+                        <f:param name="id" value="#{book.id}"/>
+                    </h:link>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">name</f:facet>
+                    #{book.name}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">title</f:facet>
+                    #{book.title}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">description</f:facet>
+                    #{book.description}
+                </h:column>
+            </h:dataTable>
+        </div>
+    </ui:define>
+</ui:composition>
