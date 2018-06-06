@@ -45,7 +45,6 @@
 
         <nav class="navbar navbar-expand-xl navbar-expand-lg navbar-light"
              role="navigation">
-            <div class=" navbar-watermark"/>
             <a class="navbar-brand" href="#">
                 <h:graphicImage library="images" name="kisspng-pencil-the-drawing-art-gold-pen.png"
                                 width="40" height="40" alt="Ketabkade"/>
@@ -99,7 +98,7 @@
 
         <ui:include src="_menu.xhtml"/>
 
-        <div id='cssmenu' class="bg-light" style="z-index: 900">
+        <div id='cssmenu' style="z-index: 900">
             <ul>
                 <!--active class-->
                 <li>
@@ -198,7 +197,7 @@
             </ul>
         </div>
 
-        <div style="border: solid; border-color: blue; border-width: thin">
+        <div>
             <div class="watermark"/>
             <div class="container">
                 <h:messages id="messages" errorClass="alert-danger" infoClass="alert-info" warnClass="alert-warning"
@@ -209,21 +208,21 @@
                         <!--<ui:include src="/base/header.xhtml"/>-->
                     </ui:insert>
                 </div>
-                <div style="padding: 10px; background-color: #E6EDF2;border-radius: 0 0 5px 5px;">
-                    <ui:insert name="content"/>
-                </div>
-
-                <div style="padding: 20px 10px 10px 10px; text-align: center">
-                    <p class="text-white" style="color: #ffffff; font-size: 10px">
-                        #{msg.copyright}
-                    </p>
-                </div>
 
                 <div>
-                    <ui:insert name="footer">
-                        <!--<ui:include src="/base/footer.xhtml"/>-->
-                    </ui:insert>
+                    <ui:insert name="content"/>
                 </div>
+            </div>
+
+            <div>
+                <ui:insert name="footer">
+                    <!--<ui:include src="/base/footer.xhtml"/>-->
+                    <div style="padding: 20px 10px 10px 10px; text-align: center">
+                        <p class="text-primary footer">
+                            #{msg.copyright}
+                        </p>
+                    </div>
+                </ui:insert>
             </div>
         </div>
     </h:body>
