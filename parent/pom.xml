@@ -17,6 +17,7 @@
         <module>../api</module>
         <module>../service</module>
 
+        <module>../jsf</module>
         <module>../web</module>
         <module>../ear</module>
     </modules>
