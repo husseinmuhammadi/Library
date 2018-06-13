@@ -3,6 +3,7 @@
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
                 template="/base/template2.xhtml">
 
     <ui:define name="metadata">
@@ -14,19 +15,37 @@
 
     <ui:define name="content">
         <h:form>
-            <h:outputText value="Name"/>
-            <h:inputText value="#{bookController.templateObject.name}"/>
-            <br/>
-            <h:outputText value="Title"/>
-            <h:inputText value="#{bookController.templateObject.title}"/>
-            <br/>
-            <h:outputText value="Description"/>
-            <h:inputText value="#{bookController.templateObject.description}"/>
-            <br/>
-            <h:commandButton value="Save" action="#{bookController.save}"
-                             rendered="#{empty bookController.templateObject.id}"/>
-            <h:commandButton value="Update" action="#{bookController.edit}"
-                             rendered="#{not empty bookController.templateObject.id}"/>
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <h:outputText value="Name" styleClass="input-group-text"/>
+                </div>
+                <h:inputText value="#{bookController.templateObject.name}" p:placeholder="Name"
+                             styleClass="form-control"/>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <h:outputText value="Title" styleClass="input-group-text"/>
+                </div>
+                <h:inputText value="#{bookController.templateObject.title}" p:placeholder="Title"
+                             styleClass="form-control"/>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <h:outputText value="Description" styleClass="input-group-text"/>
+                </div>
+                <h:inputText value="#{bookController.templateObject.description}" p:placeholder="Description"
+                             styleClass="form-control"/>
+            </div>
+
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <h:commandButton value="Save" action="#{bookController.save}" styleClass="btn btn-light"
+                                 rendered="#{empty bookController.templateObject.id}"/>
+                <h:commandButton value="Update" action="#{bookController.edit}" styleClass="btn btn-light"
+                                 rendered="#{not empty bookController.templateObject.id}"/>
+            </div>
+
+
         </h:form>
     </ui:define>
 </ui:composition>
