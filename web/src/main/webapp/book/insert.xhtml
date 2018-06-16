@@ -38,13 +38,10 @@
                              styleClass="form-control"/>
             </div>
 
-            <div class="btn-group" role="group" aria-label="Basic example">
-                <h:commandButton value="Save" action="#{bookController.save}" styleClass="btn btn-light"
-                                 rendered="#{empty bookController.templateObject.id}"/>
-                <h:commandButton value="Update" action="#{bookController.edit}" styleClass="btn btn-light"
-                                 rendered="#{not empty bookController.templateObject.id}"/>
-            </div>
-
+            <h:commandButton value="Save" action="#{bookController.save}" styleClass="btn btn-outline-primary"
+                             rendered="#{empty bookController.templateObject.id}"/>
+            <h:commandButton value="Update" action="#{bookController.edit}" styleClass="btn btn-outline-primary"
+                             rendered="#{not empty bookController.templateObject.id}"/>
 
         </h:form>
     </ui:define>
