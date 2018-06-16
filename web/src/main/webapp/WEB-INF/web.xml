@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
 
-    <display-name>Switch Simulator</display-name>
+    <display-name>Library Studio</display-name>
     <!--<icon></icon>-->
 
     <context-param>
@@ -65,7 +65,6 @@
         <servlet-name>facesContext</servlet-name>
         <url-pattern>*.xhtml</url-pattern>
     </servlet-mapping>
-
 
     <session-config>
         <session-timeout>300</session-timeout>
